@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h2>Login Global Solution</h2>
+
+        <div class="form-group">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="email"
+                aria-label="Digite seu e-mail"
+                placeholder="Digite seu email">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Senha</label>
+
+            <input
+                type="password"
+                id="senha"
+                aria-label="Digite sua senha"
+                placeholder="Digite sua senha">
+
+        </div>
+
+        <button onclick="login()">Entrar</button>
+
+        <a href="./index.html" onclick="logout()" class="btn-sair-login">Sair</a>
+
+    </div>
+    <footer>© 2026 - Global Solution FIAP</footer>
+
+    <script src="js/login.js"></script>
+    <script src="js/logout.js"></script>
+
+</body>
+
+</html>

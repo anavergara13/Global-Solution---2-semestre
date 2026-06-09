@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Monitoramento</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/monitoramento.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>🛰️ OrbitaSafe</h1>
+
+        <nav>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="alertas.html">Alertas</a>
+            <a href="relatorios.html">Relatórios</a>
+            <a href="chatbot.html">Chatbot IA</a>
+            <a href="centro-monitoramento.html">Monitoramento</a>
+            <a href="./index.html" onclick="logout()" class="btn-sair">Sair</a>
+
+        </nav>
+
+    </header>
+
+    <div class="container">
+
+
+        <section class="bloco">
+
+            <h2>👤 Perfil do Usuário</h2>
+            <div id="perfilUsuario"></div>
+        </section>
+
+        <section class="bloco">
+
+            <h2>🌎 Regiões Monitoradas</h2>
+
+            <input
+            type="text"
+            id="regiao"
+            placeholder="Nome da região">
+
+            <select id="nivelRisco">
+                <option>Baixo</option>
+                <option>Médio</option>
+                <option>Alto</option>
+            </select>
+
+            <button onclick="salvarRegiao()">Adicionar Região</button>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Região</th>
+                        <th>Risco</th>
+                    </tr>
+                </thead>
+                <tbody id="listaRegioes"></tbody>
+            </table>
+            
+        </section>
+
+
+        <section class="bloco">
+            <h2>🌍 Indicadores Ambientais</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Temperatura Média</h3>
+                    <p>28°C</p>
+                </div>
+
+                <div class="card">
+                    <h3>Áreas em Risco</h3>
+                    <p>27</p>
+                </div>
+
+                <div class="card">
+                    <h3>Focos de Queimada</h3>
+                    <p>8</p>
+                </div>
+            </div>
+        </section>
+
+<section class="bloco">
+    <h2>🤖 Recomendações da IA</h2>
+    <div id="recomendacoesIA"></div>
+</section>
+        <section class="bloco">
+
+            <h2>🚨 Histórico de Alertas</h2>
+            <div id="historicoAlertas"></div>
+
+        </section>
+
+
+        <section class="bloco">
+
+            <h2>🛰️ Estatísticas NASA EPIC</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                <h3>Imagens Consultadas</h3>
+                <p id="totalConsultas">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Último Tipo</h3>
+                    <p id="ultimoTipo">Natural</p>
+                </div>
+
+                <div class="card">
+                    <h3>Status</h3>
+                    <p>Online</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="bloco">
+
+            <h2>🌱 Objetivos da ONU</h2>
+            <div class="cards">
+
+                <div class="card">
+                    <h3>ODS 9</h3>
+                    <p>Inovação e Infraestrutura</p>
+                </div>
+
+                <div class="card">
+                    <h3>ODS 11</h3>
+                    <p>Cidades Sustentáveis</p>
+                </div>
+
+                <div class="card">
+                    <h3>ODS 13</h3>
+                    <p>Ação Climática</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="bloco">
+
+            <h2>📈 Evolução Mensal</h2>
+            <canvas id="graficoEvolucao"></canvas>
+
+        </section>
+
+    </div>
+    <footer>© 2026 - Global Solution FIAP</footer>
+    <script src="js/auth.js"></script>
+    <script src="js/centro-monitoramento.js"></script>
+
+</body>
+
+</html>

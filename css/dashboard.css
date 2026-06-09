@@ -1,0 +1,95 @@
+h1{
+    margin-bottom:20px;
+}
+
+.busca{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+input[type="date"]{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.imagem-terra{
+    width:100%;
+    max-width:900px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(255,255,255,.15);
+}
+
+#info{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#info h3{
+    margin-bottom:10px;
+}
+
+#btnBuscar {
+    width:20%;
+    max-width:900px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(255,255,255,.15);
+}
+
+#dataBusca {
+    width:20%;
+    max-width:900px;
+    margin-top: 20px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(255,255,255,.15);
+}
+
+.tipo-imagem{
+    margin-bottom:15px;
+}
+
+.tipo-imagem select{
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    margin-left:8px;
+}
+
+#btnTipoEpic{
+    font-weight: bold;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+}
+
+#tipoEpic{
+    width:10%;
+    background: #0b3d91;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateY(-2px);
+    padding:10px;
+    border-radius:8px;
+    border:none;
+}
+
+#tipoEpic {
+    background: #0b3d91;
+}

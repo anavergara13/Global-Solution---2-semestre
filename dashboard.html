@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>🛰️ Global Solution</h1>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="alertas.html">Alertas</a>
+            <a href="relatorios.html">Relatórios</a>
+            <a href="chatbot.html">Chatbot IA</a>
+            <a href="centro-monitoramento.html">Monitoramento</a>
+            <a href="./index.html" onclick="logout()" class="btn-sair">Sair</a>
+
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="cards">
+            <div class="card">
+                <h3>Alertas Ativos</h3>
+                <p id="alertasAtivos"></p>
+            </div>
+            <div class="card">
+                <h3>Regiões Monitoradas</h3>
+                <p id="regioes"></p>
+            </div>
+            <div class="card">
+                <h3>Risco Médio</h3>
+                <p id="risco"></p>
+            </div>
+        </div>
+
+        <h2>Mapa de Monitoramento</h2>
+        <div id="map"></div>
+
+        <div class="container">
+
+                <h1> Imagem da Terra em Tempo Real</h1>
+
+                <div class="tipo-imagem">
+
+    <label for="tipoEpic" id="btnTipoEpic">Tipo:</label>
+
+    <select id="tipoEpic">
+        <option value="natural">Natural</option>
+        <option value="enhanced">Enhanced</option>
+    </select>
+
+</div>
+                <div class="busca">
+                    <input type="date" id="dataBusca">
+                    <button id="btnBuscar">Buscar Imagem</button>
+                </div>
+
+                <div id="info"></div>
+
+                <img
+                    id="imagemTerra"
+                    class="imagem-terra"
+                    src=""
+                    alt="Imagem da Terra"
+                >
+
+        </div>
+        <br>
+
+        <h2>Ocorrências do Mês</h2>
+        <canvas id="grafico"></canvas>
+
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/logout.js"></script>
+
+</body>
+
+</html>

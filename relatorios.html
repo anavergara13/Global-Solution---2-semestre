@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📊 Relatórios</h1>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="alertas.html">Alertas</a>
+            <a href="relatorios.html">Relatórios</a>
+            <a href="chatbot.html">Chatbot IA</a>
+            <a href="centro-monitoramento.html">Monitoramento</a>
+            <a href="./index.html" onclick="logout()" class="btn-sair">Sair</a>
+
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <h2>Relatórios Ambientais</h2>
+        
+        <br>
+
+        <button onclick="gerarRelatorio()">Gerar Relatório</button>
+
+        <div id="resultado" class="relatorio-box">
+            <p>Clique em gerar relatório.</p>
+        </div>
+
+    </div>
+    <footer>© 2026 - Global Solution FIAP</footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/relatorios.js"></script>
+    <script src="js/logout.js"></script>
+
+</body>
+
+</html>
