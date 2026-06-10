@@ -302,6 +302,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .btn-secundario {
     background: #4a6fa5;
+    margin-top: 10px;
 }
 
 .btn-secundario:hover {
