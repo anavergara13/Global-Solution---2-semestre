@@ -1,41 +1,34 @@
-const alertas = [
-    {
-        cidade: "São Paulo",
-        tipo: "Enchente",
-        risco: "Alto"
-    },
-    {
-        cidade: "Campinas",
-        tipo: "Queimada",
-        risco: "Médio"
-    },
-    {
-        cidade: "Santos",
-        tipo: "Deslizamento",
-        risco: "Baixo"
-    }
-];
+const ICONES = { Alto: '🔴', 'Médio': '🟠', Baixo: '🟢' };
 
-const tabela = document.getElementById("tabelaAlertas");
+function classificaRisco(categoria) {
+  const altos = ['Wildfires', 'Severe Storms', 'Volcanoes', 'Floods'];
+  const medios = ['Sea and Lake Ice', 'Dust and Haze', 'Landslides'];
+  if (altos.includes(categoria)) return 'Alto';
+  if (medios.includes(categoria)) return 'Médio';
+  return 'Baixo';
+}
 
-alertas.forEach(item => {
-    let classe = "";
-
-    if (item.risco === "Alto") {
-        classe = "risco-alto";
-    }
-    if (item.risco === "Médio") {
-        classe = "risco-medio";
-    }
-    if (item.risco === "Baixo") {
-        classe = "risco-baixo";
-    }
-
-    tabela.innerHTML += `
+async function carregarAlertas() {
+  const tabela = document.getElementById('tabelaAlertas');
+  try {
+    const { eventos } = await api('/nasa/eonet');
+    tabela.innerHTML = '';
+    eventos.slice(0, 30).forEach(ev => {
+      const risco = classificaRisco(ev.categoria);
+      tabela.innerHTML += `
         <tr>
-            <td>${item.cidade}</td>
-            <td>${item.tipo}</td>
-            <td class="${classe}">${item.risco}</td>
-        </tr>
-    `;
-});
+          <td>${ev.titulo}</td>
+          <td>${ev.categoria}</td>
+          <td class="risco-${risco.toLowerCase().normalize('NFD').replace(/[^a-z]/g,'')}">
+            ${ICONES[risco]} ${risco}
+          </td>
+        </tr>`;
+    });
+    if (!eventos.length) {
+      tabela.innerHTML = '<tr><td colspan="3">Nenhum evento ativo no momento.</td></tr>';
+    }
+  } catch (e) {
+    tabela.innerHTML = `<tr><td colspan="3">Erro ao carregar alertas: ${e.message}</td></tr>`;
+  }
+}
+carregarAlertas();
