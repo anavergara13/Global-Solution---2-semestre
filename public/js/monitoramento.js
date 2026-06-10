@@ -1,5 +1,9 @@
 let regioes = [];
 
+function escapeHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 async function carregarRegioes() {
   const dados = await api('/regioes');
   regioes = dados.regioes;
@@ -12,7 +16,7 @@ function renderizarRegioes() {
   regioes.forEach(r => {
     lista.innerHTML += `
       <tr>
-        <td>${r.nome}</td>
+        <td>${escapeHtml(r.nome)}</td>
         <td>${r.nivel_risco}</td>
         <td><button onclick="removerRegiao(${r.id})">Excluir</button></td>
       </tr>`;
@@ -34,17 +38,19 @@ async function salvarRegiao() {
 }
 
 async function removerRegiao(id) {
-  await api(`/regioes/${id}`, { method: 'DELETE' });
-  carregarRegioes();
+  try {
+    await api(`/regioes/${id}`, { method: 'DELETE' });
+    carregarRegioes();
+  } catch (e) { alert(e.message); }
 }
 
 function atualizarAlertas() {
   const historico = document.getElementById('historicoAlertas');
   historico.innerHTML = '';
   regioes.forEach(r => {
-    let classe = 'alerta-baixo', msg = `✅ Situação normal em ${r.nome}`;
-    if (r.nivel_risco === 'Alto') { classe = 'alerta-alto'; msg = `🚨 ALERTA CRÍTICO em ${r.nome}`; }
-    else if (r.nivel_risco === 'Médio') { classe = 'alerta-medio'; msg = `⚠ Atenção para ${r.nome}`; }
+    let classe = 'alerta-baixo', msg = `✅ Situação normal em ${escapeHtml(r.nome)}`;
+    if (r.nivel_risco === 'Alto') { classe = 'alerta-alto'; msg = `🚨 ALERTA CRÍTICO em ${escapeHtml(r.nome)}`; }
+    else if (r.nivel_risco === 'Médio') { classe = 'alerta-medio'; msg = `⚠ Atenção para ${escapeHtml(r.nome)}`; }
     historico.innerHTML += `<div class="${classe}">${msg}</div>`;
   });
 }
