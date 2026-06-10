@@ -15,6 +15,7 @@ app.use(session({
 }));
 
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/regioes', require('./routes/regioes'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
