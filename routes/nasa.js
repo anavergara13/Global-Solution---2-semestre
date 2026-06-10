@@ -12,13 +12,13 @@ router.get('/eonet', async (req, res) => {
   const categoria = req.query.categoria || '';
   const chave = `eonet:${categoria}`;
   let dados = cacheGet(chave, TTL);
-  if (!dados) {
+  if (!dados || dados.length === 0) {
     try {
       let url = 'https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=100';
       if (categoria) url += `&category=${encodeURIComponent(categoria)}`;
       const r = await fetch(url);
       dados = normalizarEonet(await r.json());
-      cacheSet(chave, dados, TTL);
+      if (dados.length > 0) cacheSet(chave, dados, TTL); // não cacheia vazio (evita servir vazio por 10 min)
     } catch (e) {
       return res.status(502).json({ erro: 'falha ao consultar EONET' });
     }
