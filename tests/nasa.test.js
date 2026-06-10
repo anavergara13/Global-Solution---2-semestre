@@ -30,3 +30,12 @@ test('normalizarEonet ignora eventos sem geometria', () => {
   const out = normalizarEonet({ events: [{ title: 'sem geo', categories: [], geometry: [] }] });
   assert.strictEqual(out.length, 0);
 });
+
+process.env.DB_PATH = ':memory:';
+const request = require('supertest');
+const app = require('../app');
+
+test('GET /api/nasa/eonet exige auth (401)', async () => {
+  const res = await request(app).get('/api/nasa/eonet');
+  assert.strictEqual(res.status, 401);
+});
