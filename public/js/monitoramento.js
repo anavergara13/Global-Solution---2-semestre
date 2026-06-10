@@ -58,7 +58,7 @@ function atualizarAlertas() {
 // perfil do usuário
 api('/auth/me').then(({ usuario }) => {
   document.getElementById('perfilUsuario').innerHTML =
-    `<div class="card"><h3>${usuario.nome}</h3><p>Operador do sistema OrbitaSafe</p></div>`;
+    `<div class="card"><h3>${escapeHtml(usuario.nome)}</h3><p>Operador do sistema OrbitaSafe</p></div>`;
 }).catch(() => {});
 
 // estatísticas NASA (consultas reais)
