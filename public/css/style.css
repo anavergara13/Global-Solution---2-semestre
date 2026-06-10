@@ -10,7 +10,10 @@ body {
     background-color: #f4f7fb;
     color: #333;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+main { flex: 1; }
 
 header {
     background: #0b3d91;
@@ -209,43 +212,6 @@ table tr:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.chat-container {
-    width: 800px;
-    max-width: 95%;
-    margin: 40px auto;
-}
-
-.chat-box {
-    background: white;
-    min-height: 350px;
-    padding: 20px;
-    border-radius: 12px;
-    overflow-y: auto;
-    margin-bottom: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    
-}
-
-.user-msg {
-    text-align: right;
-    margin-bottom: 15px;
-}
-
-.chat-input {
-    display: flex;
-    gap: 10px;
-
-}
-
-.chat-input input {
-    flex: 1;
-    padding: 12px;
-
-    border: 1px solid #ccc;
-
-    border-radius: 8px;
-}
-
 footer {
     margin-top: 50px;
     background: #0b3d91;
@@ -275,8 +241,13 @@ footer {
 
 }
 
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 2px;
+}
+
 .btn-sair {
-    background: #819dcc;
+    background: #4a6fa5;
     color: #ffffff;
     padding: 20px 40px;
     border-radius: 5px;
@@ -296,20 +267,6 @@ footer {
 
 .btn-sair:active {
     transform: translateY(0);
-}
-
-#pergunta {
-    color: #ffffff;
-    padding: 100px 40px;
-    font-weight: bold;
-
-}
-
-#btn-enviar {
-    color: #ffffff;
-    padding: 20px 40px;
-    font-weight: bold;
-    margin-top: 10px;
 }
 
 .btn-sair-login {
@@ -333,4 +290,21 @@ footer {
 
 .btn-sair:active {
     transform: translateY(0);
+}
+
+.login-cadastro {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.btn-secundario {
+    background: #4a6fa5;
+    margin-top: 10px;
+}
+
+.btn-secundario:hover {
+    background: #082b66;
 }

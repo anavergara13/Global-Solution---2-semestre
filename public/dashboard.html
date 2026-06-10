@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>OrbitaSafe — Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
@@ -14,19 +14,18 @@
 <body>
 
     <header>
-        <h1>🛰️ Global Solution</h1>
+        <h1>🛰️ OrbitaSafe</h1>
         <nav>
             <a href="dashboard.html">Dashboard</a>
             <a href="alertas.html">Alertas</a>
             <a href="relatorios.html">Relatórios</a>
-            <a href="chatbot.html">Chatbot IA</a>
             <a href="centro-monitoramento.html">Monitoramento</a>
             <a href="./index.html" onclick="logout()" class="btn-sair">Sair</a>
 
         </nav>
     </header>
 
-    <div class="container">
+    <main class="container">
 
         <div class="cards">
             <div class="card">
@@ -80,9 +79,11 @@
         <h2>Ocorrências do Mês</h2>
         <canvas id="grafico"></canvas>
 
-    </div>
+    </main>
+    <footer>© 2026 - OrbitaSafe FIAP</footer>
     <script src="js/auth.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/api.js"></script>
     <script src="js/dashboard.js"></script>
     <script src="js/logout.js"></script>
 

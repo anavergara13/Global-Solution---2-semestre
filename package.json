@@ -1,0 +1,16 @@
+{
+  "name": "orbitasafe",
+  "version": "2.0.0",
+  "description": "Monitoramento ambiental por satélite - FIAP Global Solution 2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "helmet": "^8.0.0"
+  }
+}
