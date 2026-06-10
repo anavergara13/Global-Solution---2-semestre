@@ -25,4 +25,26 @@ router.post('/register', (req, res) => {
   res.status(201).json({ usuario: publico(u) });
 });
 
+router.post('/login', (req, res) => {
+  const { email, senha } = req.body || {};
+  if (!email || !senha) return res.status(400).json({ erro: 'email e senha obrigatórios' });
+  const u = db.prepare('SELECT * FROM usuarios WHERE email = ?').get(email);
+  if (!u || !bcrypt.compareSync(senha, u.senha_hash)) {
+    return res.status(401).json({ erro: 'credenciais inválidas' });
+  }
+  req.session.usuarioId = u.id;
+  res.json({ usuario: publico(u) });
+});
+
+router.post('/logout', (req, res) => {
+  req.session.destroy(() => res.json({ ok: true }));
+});
+
+router.get('/me', (req, res) => {
+  if (!req.session.usuarioId) return res.status(401).json({ erro: 'não autenticado' });
+  const u = db.prepare('SELECT * FROM usuarios WHERE id = ?').get(req.session.usuarioId);
+  if (!u) return res.status(401).json({ erro: 'não autenticado' });
+  res.json({ usuario: publico(u) });
+});
+
 module.exports = router;
