@@ -14,6 +14,8 @@ app.use(session({
   cookie: { httpOnly: true, sameSite: 'lax' }
 }));
 
+app.use('/api/auth', require('./routes/auth'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
