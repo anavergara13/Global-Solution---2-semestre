@@ -10,7 +10,10 @@ body {
     background-color: #f4f7fb;
     color: #333;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+main { flex: 1; }
 
 header {
     background: #0b3d91;
@@ -238,8 +241,13 @@ footer {
 
 }
 
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 2px;
+}
+
 .btn-sair {
-    background: #819dcc;
+    background: #4a6fa5;
     color: #ffffff;
     padding: 20px 40px;
     border-radius: 5px;

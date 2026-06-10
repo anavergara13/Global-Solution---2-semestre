@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Monitoramento</title>
+    <title>OrbitaSafe — Monitoramento</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/monitoramento.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -14,7 +14,7 @@
 
     <header>
 
-        <h1>🛰️ OrbitaSafe</h1>
+        <h1>🛰️ OrbitaSafe — Monitoramento</h1>
 
         <nav>
 
@@ -28,7 +28,7 @@
 
     </header>
 
-    <div class="container">
+    <main class="container">
 
 
         <section class="bloco">
@@ -44,16 +44,17 @@
             <input
             type="text"
             id="regiao"
+            aria-label="Região"
             placeholder="Nome da região">
 
-            <select id="nivelRisco">
+            <select id="nivelRisco" aria-label="Nível de Risco">
                 <option>Baixo</option>
                 <option>Médio</option>
                 <option>Alto</option>
             </select>
 
-            <input type="number" step="any" id="lat" placeholder="Latitude (opcional)">
-            <input type="number" step="any" id="lon" placeholder="Longitude (opcional)">
+            <input type="number" step="any" id="lat" aria-label="Latitude" placeholder="Latitude (opcional)">
+            <input type="number" step="any" id="lon" aria-label="Longitude" placeholder="Longitude (opcional)">
 
             <button onclick="salvarRegiao()">Adicionar Região</button>
 
@@ -161,8 +162,8 @@
 
         </section>
 
-    </div>
-    <footer>© 2026 - Global Solution FIAP</footer>
+    </main>
+    <footer>© 2026 - OrbitaSafe FIAP</footer>
     <script src="js/auth.js"></script>
     <script src="js/api.js"></script>
     <script src="js/monitoramento.js"></script>
