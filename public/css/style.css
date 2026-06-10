@@ -291,3 +291,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .btn-sair:active {
     transform: translateY(0);
 }
+
+.login-cadastro {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.btn-secundario {
+    background: #4a6fa5;
+}
+
+.btn-secundario:hover {
+    background: #082b66;
+}

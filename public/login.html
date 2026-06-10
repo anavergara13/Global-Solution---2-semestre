@@ -16,38 +16,30 @@
 
         <h2>Login OrbitaSafe</h2>
 
+        <form onsubmit="login(); return false;">
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite seu email" autocomplete="email">
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" autocomplete="current-password">
+            </div>
+
+            <button type="submit">Entrar</button>
+
+        </form>
+
+        <p class="login-cadastro">Ainda não tem conta? Informe seu nome e cadastre-se:</p>
+
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" placeholder="Seu nome (para cadastro)">
+            <input type="text" id="nome" placeholder="Seu nome">
         </div>
 
-        <div class="form-group">
-
-            <label for="email">Email</label>
-
-            <input
-                type="email"
-                id="email"
-                aria-label="Digite seu e-mail"
-                placeholder="Digite seu email">
-
-        </div>
-
-        <div class="form-group">
-
-            <label for="senha">Senha</label>
-
-            <input
-                type="password"
-                id="senha"
-                aria-label="Digite sua senha"
-                placeholder="Digite sua senha">
-
-        </div>
-
-        <button onclick="login()">Entrar</button>
-
-        <button onclick="cadastrar()">Cadastrar</button>
+        <button type="button" class="btn-secundario" onclick="cadastrar()">Cadastrar</button>
 
     </main>
     <footer>© 2026 - OrbitaSafe FIAP</footer>
