@@ -22,11 +22,11 @@ router.get('/', async (req, res) => {
 
   // eventos EONET por categoria (de cache se disponível; senão consulta)
   let eventos = cacheGet('eonet:', 10 * 60 * 1000);
-  if (!eventos) {
+  if (!eventos || eventos.length === 0) {
     try {
       const r = await fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=100');
       eventos = normalizarEonet(await r.json());
-      cacheSet('eonet:', eventos, 10 * 60 * 1000);
+      if (eventos.length > 0) cacheSet('eonet:', eventos, 10 * 60 * 1000);
     } catch (e) { eventos = []; }
   }
   const eventosPorCategoria = {};
