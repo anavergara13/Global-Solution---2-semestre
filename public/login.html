@@ -17,8 +17,13 @@
         <h2>Login Global Solution</h2>
 
         <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="Seu nome (para cadastro)">
+        </div>
 
-            <label>Email</label>
+        <div class="form-group">
+
+            <label for="email">Email</label>
 
             <input
                 type="email"
@@ -30,7 +35,7 @@
 
         <div class="form-group">
 
-            <label>Senha</label>
+            <label for="senha">Senha</label>
 
             <input
                 type="password"
@@ -42,11 +47,12 @@
 
         <button onclick="login()">Entrar</button>
 
-        <a href="./index.html" onclick="logout()" class="btn-sair-login">Sair</a>
+        <button onclick="cadastrar()">Cadastrar</button>
 
     </div>
     <footer>© 2026 - Global Solution FIAP</footer>
 
+    <script src="js/api.js"></script>
     <script src="js/login.js"></script>
     <script src="js/logout.js"></script>
 

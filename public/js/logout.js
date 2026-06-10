@@ -1,10 +1,4 @@
-function logout(){
-
-localStorage.removeItem(
-"usuario"
-);
-
-window.location =
-"login.html";
-
+function logout() {
+  fetch('/api/auth/logout', { method: 'POST' })
+    .finally(() => { window.location = 'login.html'; });
 }

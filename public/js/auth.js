@@ -1,5 +1,3 @@
-const usuario = localStorage.getItem("usuario");
-
-if (!usuario) {
-    window.location = "login.html";
-}
+fetch('/api/auth/me')
+  .then(r => { if (!r.ok) window.location = 'login.html'; })
+  .catch(() => { window.location = 'login.html'; });
